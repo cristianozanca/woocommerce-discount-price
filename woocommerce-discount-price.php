@@ -33,6 +33,26 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 
 }
 
+/**
+ * Check if WooCommerce is 3.0 or higher
+ **/
+function check_wc_version(){
+	if ( function_exists( 'WC' ) && ( version_compare( WC()->version, '3.0', "<" ) )) {
+		?>
+		<div class="notice error is-dismissible">
+			<p><?php _e('WooCommerce version detected: '. WC()->version.' please update to 3.0' ); ?></p>
+		</div>
+		<?php
+	}
+}
+add_action('admin_notices', 'check_wc_version');
+
+
+
+
+
+###############################################à
+
 
 add_filter( 'woocommerce_cart_item_price', 'woodiscpr_change_cart_table_price_display', 30, 3 );
 
@@ -44,3 +64,5 @@ function woodiscpr_change_cart_table_price_display( $price, $values, $cart_item_
 	}
 	return $price;
 }
+
+

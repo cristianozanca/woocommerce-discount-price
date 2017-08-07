@@ -10,7 +10,7 @@ Display regular and sale price in the Cart
 == Description ==
 
 Display also the regular sale price in the Cart, by default is only displayed the discounted one.
-Thanks to Rodolfo Melogli
+Thanks to Rodolfo Melogli Bülent Sakarya Daniel Pataki
 
 == Changelog ==
 
